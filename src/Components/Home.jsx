@@ -1,5 +1,31 @@
 import React, { useEffect, useState } from "react";
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
 
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
 export const Home = () => {
   const [data, setData] = useState([]);
   const [sortdata, setSortdata] = useState([]);
@@ -15,44 +41,42 @@ export const Home = () => {
   //   console.log("data", data);
 
   return (
+    
     <div>
-      <button>Sort by Population</button>
-      <br />
-      <br />
-      <table style={{ border: "1.5px solid black" }}>
-        <thead>
-          <tr>
-            <th style={{ border: "1px solid gray" }}>S.No</th>
-            <th style={{ border: "1px solid gray" }}>Country</th>
-            <th style={{ border: "1px solid gray" }}>City</th>
-            <th style={{ border: "1px solid gray" }}>Population</th>
-            <th style={{ border: "1px solid gray" }}>Update</th>
-            <th style={{ border: "1px solid gray" }}>Update</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((e) => (
-            <tr key={e.id}>
-              <td style={{ border: "1px solid gray" }}>{e.id}.</td>
-              <td style={{ border: "1px solid gray" }}>{e.country_name}</td>
-              <td style={{ border: "1px solid gray" }}>{e.city_name}</td>
-              <td style={{ border: "1px solid gray" }}>{e.population}</td>
-              <td>
-                <button>Edit</button>
-              </td>
-              <td>
-                <button
-                //   onClick={(e) => {
-                //     data.filter((e) => setData())
-                //   }}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
+       <button>Sort by Population</button>
+      <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>Serial NO.</StyledTableCell>
+            <StyledTableCell align="right">COUNTRY NAME</StyledTableCell>
+            <StyledTableCell align="right">CITY NAME</StyledTableCell>
+            <StyledTableCell align="right">POPULATION</StyledTableCell>
+            <StyledTableCell align="right">EDIT</StyledTableCell>
+            <StyledTableCell align="right">DELETE</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((row) => (
+            <StyledTableRow key={row.name}>
+              <StyledTableCell component="th" scope="row">
+                {row.id}
+              </StyledTableCell>
+              <StyledTableCell align="right">{row.country_name}</StyledTableCell>
+              <StyledTableCell align="right">{row.city_name}</StyledTableCell>
+              <StyledTableCell align="right">{row.population}</StyledTableCell>
+              <button>Edit</button>
+             
+              <button>delete</button>
+            </StyledTableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
+    </TableContainer>
+     
+      <br />
+      <br />
+      
     </div>
   );
 };

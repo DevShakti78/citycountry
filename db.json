@@ -17,6 +17,24 @@
       "city_name": "kashmer",
       "population": "846546",
       "id": 3
+    },
+    {
+      "country_name": "indida",
+      "city_name": "mau",
+      "population": "5454",
+      "id": 4
+    },
+    {
+      "country_name": "russia",
+      "city_name": "ukrane",
+      "population": "52525",
+      "id": 5
+    },
+    {
+      "country_name": "russia",
+      "city_name": "uneka",
+      "population": "122",
+      "id": 6
     }
   ]
 }
