@@ -7,8 +7,8 @@ import { AddCity } from "./Components/AddCity";
 function App() {
   return (
     <div className="App">
-      <Link to="/">Home</Link> <br />
-      <Link to="/add-country">AddCountry</Link> <br /> <br />
+      <Link to="/"><h3>Home</h3></Link> <br />
+      <Link to="/add-country"><h4>AddCountry</h4></Link> <br /> <br />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add-country" element={<AddCountry />} />

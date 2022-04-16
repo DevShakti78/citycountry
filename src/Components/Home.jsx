@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
+import Button from '@mui/material/Button';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
@@ -39,11 +40,26 @@ export const Home = () => {
   }, []);
 
   //   console.log("data", data);
-
+  const handleescSort=(field,asc=true)=>{
+    const sortdata = data.sort((a,b)=>{
+  
+      if(asc){
+        return a[field]-b[field]
+      }
+     
+        return b[field]-a[field]
+      
+      
+    })
+    setData([...sortdata])
+  }
   return (
     
     <div>
-       <button>Sort by Population</button>
+       <Button onClick={()=>handleescSort("population")} variant="contained" >
+       Sort by Population
+</Button>
+      
       <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
@@ -60,14 +76,23 @@ export const Home = () => {
           {data.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
-                {row.id}
+               <h2>{row.id}</h2> 
               </StyledTableCell>
-              <StyledTableCell align="right">{row.country_name}</StyledTableCell>
-              <StyledTableCell align="right">{row.city_name}</StyledTableCell>
-              <StyledTableCell align="right">{row.population}</StyledTableCell>
-              <button>Edit</button>
-             
-              <button>delete</button>
+              <StyledTableCell align="right"><h3>{row.country_name}</h3></StyledTableCell>
+              <StyledTableCell align="right"><h3>{row.city_name}</h3></StyledTableCell>
+              <StyledTableCell align="right"><h3>{row.population}</h3></StyledTableCell>
+              <StyledTableCell align="right">
+              <Button variant="contained" color="success">
+edit
+</Button>
+              </StyledTableCell>
+            
+              <StyledTableCell align="right">
+              <Button variant="outlined" color="error">
+  Delete
+</Button>
+              </StyledTableCell>
+           
             </StyledTableRow>
           ))}
         </TableBody>
