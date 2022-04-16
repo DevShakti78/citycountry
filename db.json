@@ -1,21 +1,21 @@
 {
   "Country": [
     {
-      "country_name": "USA",
-      "city_name": "Texas",
-      "population": "100000",
+      "country_name": "india",
+      "city_name": "patna",
+      "population": "25000",
       "id": 1
     },
     {
-      "country_name": "India",
-      "city_name": "Tamil Nadu",
-      "population": "500000",
+      "country_name": "USA",
+      "city_name": "London",
+      "population": "560000",
       "id": 2
     },
     {
       "country_name": "india",
-      "city_name": "patna",
-      "population": "25000",
+      "city_name": "patna ",
+      "population": "50000000",
       "id": 3
     }
   ]
