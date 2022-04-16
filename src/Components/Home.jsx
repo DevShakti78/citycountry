@@ -40,6 +40,14 @@ export const Home = () => {
   }, []);
 
   //   console.log("data", data);
+const deleteItem = (index) =>{
+  alert("deleted succesfully")
+var newData = data;
+newData.splice(index,1);
+setData([...newData])
+}
+
+
   const handleescSort=(field,asc=true)=>{
     const sortdata = data.sort((a,b)=>{
   
@@ -73,7 +81,7 @@ export const Home = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((row) => (
+          {data.map((row,index) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
                <h2>{row.id}</h2> 
@@ -88,7 +96,7 @@ edit
               </StyledTableCell>
             
               <StyledTableCell align="right">
-              <Button variant="outlined" color="error">
+              <Button onClick={()=>deleteItem(index)} variant="outlined" color="error">
   Delete
 </Button>
               </StyledTableCell>
