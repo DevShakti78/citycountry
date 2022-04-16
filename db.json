@@ -1,21 +1,21 @@
 {
   "Country": [
     {
-      "country_name": "india",
+      "country_name": "India",
       "city_name": "patna",
-      "population": "25000",
+      "population": "525246",
       "id": 1
     },
     {
-      "country_name": "USA",
-      "city_name": "London",
-      "population": "560000",
+      "country_name": "India",
+      "city_name": "nainital",
+      "population": "6498465",
       "id": 2
     },
     {
-      "country_name": "india",
-      "city_name": "patna ",
-      "population": "50000000",
+      "country_name": "India",
+      "city_name": "kashmer",
+      "population": "846546",
       "id": 3
     }
   ]

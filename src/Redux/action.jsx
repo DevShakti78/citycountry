@@ -19,7 +19,7 @@ export const CountryFailed = (payload) => ({
 
 export const UpdateDetails = (details) => (dispatch) => {
   dispatch(CountryLoading);
-  fetch(`http://localhost:8080/Country`, {
+  fetch(`http://localhost:8000/Country`, {
     method: "POST",
     body: JSON.stringify(details),
     headers: {

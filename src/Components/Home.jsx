@@ -5,7 +5,7 @@ export const Home = () => {
   const [sortdata, setSortdata] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/Country`)
+    fetch(`http://localhost:8000/Country`)
       .then((res) => res.json())
       .then((res) => setData(res))
       .then((res) => setSortdata(res))
