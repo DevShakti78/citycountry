@@ -1,0 +1,22 @@
+{
+  "Country": [
+    {
+      "country_name": "USA",
+      "city_name": "Texas",
+      "population": "100000",
+      "id": 1
+    },
+    {
+      "country_name": "India",
+      "city_name": "Tamil Nadu",
+      "population": "500000",
+      "id": 2
+    },
+    {
+      "country_name": "india",
+      "city_name": "patna",
+      "population": "25000",
+      "id": 3
+    }
+  ]
+}
